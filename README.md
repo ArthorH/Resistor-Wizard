@@ -104,6 +104,10 @@ With "R2" resistor values: [47.0, 33.0]
                             ---            ---    ---    ---
 ==================================================================================
 ```
+## PyPlot
+Here's plot of "distances" that alghoritm calculated while searching for 3 resistors in E12
+![Figure_1](https://github.com/user-attachments/assets/015910e7-8a97-40ba-bd63-174f17b5c22c)
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
@@ -113,6 +117,8 @@ to discuss what you would like to change.
 * [Evan Fosmark](mailto:evan.fosmark@gmail.com) for making the amazing [Python resistor divider calculator](https://github.com/efosmark/voltage-divider), which my script is heavily based on.
 * https://www.asciiart.eu for providing ascii art
 
+
+## Author: 
+Artem Horiunov ArtemHoriunov@gmail.com
 ## License
-Author: Artem Horiunov ArtemHoriunov@gmail.com
 [MIT](https://choosealicense.com/licenses/mit/)
