@@ -111,6 +111,7 @@ to discuss what you would like to change.
 
 ## Shout out to:
 [Evan Fosmark](mailto:evan.fosmark@gmail.com) for making the amazing [Python resistor divider calculator](https://github.com/efosmark/voltage-divider), which my script is heavily based on.
+https://www.asciiart.eu/people/occupations/wizards for providing ascii art
 
 ## License
 Author: Artem Horiunov ArtemHoriunov@gmail.com
