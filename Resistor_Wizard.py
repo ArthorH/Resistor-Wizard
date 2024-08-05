@@ -57,11 +57,12 @@
 
 from itertools import product, permutations, combinations
 import eia
-import levenshtein
 import numpy as np
 
+vref = 1.25
+
 def calc_vout(r1, r2):
-	return 1.25*(1+(((r2)/(r1))))
+	return vref*(1+(((r2)/(r1))))
 
 best_distance = float('inf')
 
@@ -170,7 +171,9 @@ print("                             |              |      |      |")
 print("                             |              |      |      |")
 print("                            ---            ---    ---    ---")
 print("==================================================================================")
-
+print("Type voltage stabilizer VREF in [V]:")
+vref = float(input("Vref in [V] : "))
+print("==================================================================================")
 print("Select value set:")
 print("1. E3")
 print("2. E6")
