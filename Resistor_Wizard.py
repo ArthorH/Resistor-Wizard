@@ -61,8 +61,6 @@ import numpy as np
 
 vref = 1.25
 
-def calc_vout(r1, r2):
-	return vref*(1+(((r2)/(r1))))
 
 best_distance = float('inf')
 
@@ -125,6 +123,10 @@ def get_change(current, previous):
         return (abs(current - previous) / previous) * 100.0
     except ZeroDivisionError:
         return float('inf')
+
+def calc_vout(r1, r2):
+	return 1.25*(1+(((r2)/r1)))
+
 
 #User menu 
 
@@ -311,6 +313,17 @@ for possible_R1_values in value_set:
                         print("With \"R2\" resistor values: " + str(best_decade_values))
                         print("For desired voltages   : " + str(expedted_voltages_permutation ))
                         print("Closest i could get is : " + str(best_voltages))
+                        comb_decade_vals = generate_all_combinations(best_decade_values)
+                        for q_comb in comb_decade_vals:                 # calculate all switch combinations for all resistors
+                            if len(q_comb) < 2:
+                                eq_resistance = int(q_comb[0])                                #if current combination does not contain 2 or more resistors than skip parralel resistance calculation
+                            else:
+                                eq_resistance = calculate_parallel_resistance(q_comb)
+                            print("==========================")
+                            print("for R1 value: " + str(R1_best_value))
+                            print("and R2 values of " + str(q_comb) + " connected")
+                            print("output voltage is : " + str(round(calc_vout(R1_best_value, eq_resistance),4))) 
+                            print("==========================")
                         print("==========================================================================")
 #Wizard by Shanaka Dias
 
@@ -330,6 +343,17 @@ print("For desired voltages: " + str(expected_voltages_list))
 print("Closest i could get is:" + str(best_voltages))
 print("With \"R1\" resistor values: " + str(R1_best_value))
 print("With \"R2\" resistor values: " + str(best_decade_values))
+comb_decade_vals = generate_all_combinations(best_decade_values)
+for q_comb in comb_decade_vals:                 # calculate all switch combinations for all resistors
+    if len(q_comb) < 2:
+        eq_resistance = int(q_comb[0])                                #if current combination does not contain 2 or more resistors than skip parralel resistance calculation
+    else:
+        eq_resistance = calculate_parallel_resistance(q_comb)
+    print("==========================")
+    print("for R1 value: " + str(R1_best_value))
+    print("and R2 values of " + str(q_comb) + " connected")
+    print("output voltage is : " + str(round(calc_vout(R1_best_value, eq_resistance),4))) 
+    print("==========================")
 print("==========================================================================")
 print("==================================================================================")
 print("                 .----------------------.")
